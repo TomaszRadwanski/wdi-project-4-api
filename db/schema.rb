@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605105431) do
+ActiveRecord::Schema.define(version: 20170605142611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "bidder_id"
+    t.bigint "request_id"
+    t.integer "price"
+    t.string "location"
+    t.string "time"
+    t.text "description"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_bids_on_request_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.bigint "user_id"
@@ -49,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170605105431) do
     t.string "image"
   end
 
+  add_foreign_key "bids", "requests"
   add_foreign_key "products", "users"
   add_foreign_key "requests", "users"
 end

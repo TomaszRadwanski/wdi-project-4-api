@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  bidder_id: 1
+  request: one
+  price: 1
+  location: MyString
+  time: MyString
+  description: MyText
+  status: MyString
+
+two:
+  owner_id: 1
+  bidder_id: 1
+  request: two
+  price: 1
+  location: MyString
+  time: MyString
+  description: MyText
+  status: MyString

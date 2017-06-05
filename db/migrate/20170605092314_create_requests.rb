@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration[5.1]
       t.string :type
       t.string :flavor
       t.string :quantity
-      t.text :notes
+      t.text   :notes
 
       t.timestamps
     end
