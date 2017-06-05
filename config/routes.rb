@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :requests
+  resources :products
   scope :api do
     resources :users
     resources :posts

@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(username: "alex", first_name: "Alex", last_name: "Chin")
-User.create!(username: "mike", first_name: "Mike", last_name: "Hayden")
-User.create!(username: "rane", first_name: "Rane", last_name: "Gowan")
+u1 = User.create!(username: "vtech", first_name: "Witek", last_name: "Radwanski", email: "vtech@vtech.com", password: "password", password_confirmation: "password")
+
+
+p1 = u1.products.create!(description: "the berry best", quantity: "91 bowls", price: 77)
+
+r1 = u1.requests.create!(alcohol: "nalewka", quantity: "1 bowl", flavor: "apple")
