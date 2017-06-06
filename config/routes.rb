@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :bids
-  resources :requests
-  resources :products
+
   scope :api do
     resources :users
-    resources :posts
+    resources :requests
+    resources :bids
+    resources :products
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
   end
