@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
 
   # POST /requests
   def create
-    @request = Request.new(request_params)
+    @request = @current_user.requests.new(request_params)
 
     if @request.save
       render json: @request, status: :created, location: @request
@@ -46,6 +46,6 @@ class RequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def request_params
-      params.require(:request).permit(:user_id, :type, :flavor, :quantity, :notes)
+      params.require(:request).permit(:user_id, :alcohol, :flavor, :quantity, :notes)
     end
 end
