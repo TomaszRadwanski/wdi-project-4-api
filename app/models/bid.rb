@@ -1,6 +1,7 @@
 class Bid < ApplicationRecord
   belongs_to :request
-  belongs_to :creator, foreign_key: "bidder_id", class_name: "User"
+  belongs_to :user
+
 
   before_create :set_default_status
 

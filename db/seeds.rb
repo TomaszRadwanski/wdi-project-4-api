@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 u1 = User.create!(username: "vtech", first_name: "Witek", last_name: "Radwanski", email: "vtech@vtech.com", password: "password", password_confirmation: "password")
 
-u2 = User.create!(username: "rgowan", first_name: "Rane", last_name: "Gowan", email: "rane@rane.com", password: "password", password_confirmation: "password")
+u2 = User.create!(username: "rgowan", first_name: "Rane", last_name: "Gowan", email: "rane@rane.com", password: "password", password_confirmation: "password", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mandarin.duck.arp.jpg/220px-Mandarin.duck.arp.jpg", bio: "I'm a cool guy")
 
 r1 = u1.requests.create!(alcohol: "Vodka", flavor: "Lemon", quantity: "6", notes: "I want this now!")
 
