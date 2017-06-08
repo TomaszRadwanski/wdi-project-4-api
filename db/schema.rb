@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607163723) do
+ActiveRecord::Schema.define(version: 20170608101251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bids", force: :cascade do |t|
     t.bigint "request_id"
-    t.integer "price"
     t.string "location"
     t.string "time"
     t.text "description"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170607163723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "price"
     t.index ["request_id"], name: "index_bids_on_request_id"
     t.index ["user_id"], name: "index_bids_on_user_id"
   end
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20170607163723) do
     t.text "description"
     t.string "quantity"
     t.string "image"
-    t.integer "price"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "price"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170607163723) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 

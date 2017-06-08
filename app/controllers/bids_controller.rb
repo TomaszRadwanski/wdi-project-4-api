@@ -15,7 +15,7 @@ class BidsController < ApplicationController
 
   # POST /bids
   def create
-    @bid = Bid.new(bid_params)
+    @bid = @current_user.bids.new(bid_params)
 
     if @bid.save
       render json: @bid, status: :created, location: @bid
