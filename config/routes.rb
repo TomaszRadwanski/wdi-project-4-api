@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :products
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
+    post 'bids/requests', to: 'bids#request_delete'
   end
 end

@@ -1,6 +1,6 @@
 class Request < ApplicationRecord
   belongs_to :user
-  has_many   :bids
+  has_many   :bids, dependent: :destroy
 
   validates :user_id, presence: true
   validates :alcohol, presence: true
